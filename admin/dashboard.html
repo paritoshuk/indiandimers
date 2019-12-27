@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        if (!localStorage.getItem('login')) {
+            location.href = '/admin';
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard | Indian Dimers</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Rye&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="ui top fixed inverted menu">
+        <a target="_blank" href="../index.html" class="item logo">Indian Dimers</a>
+        <a class="item red active right floated" onclick="logout()">
+            <i class="power off icon"></i> Logout
+        </a>
+    </div>
+    <div class="ui middle aligned center aligned grid">
+        <div class="column">
+            <form method="POST" class="ui large form" id="linkForm">
+                <div class="ui stacked secondary segment">
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="linkify icon"></i>
+                            <input type="text" name="productLink" placeholder="Enter product link">
+                        </div>
+                    </div>
+                    <div class="ui fluid large teal submit button">Submit</div>
+                </div>
+                <div class="ui error message"></div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
